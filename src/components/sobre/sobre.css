@@ -1,0 +1,85 @@
+/* Sobre começa */
+#sobre {
+    display: flex;
+    padding: 5rem;
+    background-color: #f5f5f5;
+  }
+  
+  #sobre h2 {
+    font-size: 1.9rem;
+    margin-bottom: 2em;
+    letter-spacing: 0.1rem;
+    color: #5d4037;
+  }
+  
+  #sobre p {
+    margin-bottom: 2em;
+    width: 90%;
+    font-size: 0.9rem;
+    text-align: justify;
+    color: #5d4037;
+  }
+  
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .text-container span {
+    font-family: "chewy", sans-serif;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+  }
+  
+  .box-container {
+    display: grid;
+    grid-template-columns: repeat(2, 300px); /* Duas colunas */
+    grid-template-rows: repeat(2, 320px);
+    padding: 2rem;
+  }
+  
+  .box-container h3 {
+    font-weight: 300;
+    font-size: 1.2rem;
+  }
+  
+  .box-container > div:first-child {
+    border-top-left-radius: 10px;
+  }
+  
+  .box-container > div:nth-last-child(3) {
+    border-top-right-radius: 10px;
+  }
+  
+  .box-container > div:nth-child(3) {
+    border-bottom-left-radius: 10px;
+  }
+  
+  .box-container > div:last-child {
+    border-bottom-right-radius: 10px;
+  }
+  
+  .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f57b00;
+    color: #ffecb3;
+    gap: 2vw;
+  }
+  
+  .diferente {
+    background-color: #ffecb3;
+    color: #f57b00;
+  }
+  
+  .icon-color {
+    fill: #ffecb3;
+  }
+  
+  .icon-color-diferente {
+    fill: #f57b00;
+  }
+  /* Sobre termina */

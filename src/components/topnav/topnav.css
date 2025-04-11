@@ -1,0 +1,36 @@
+/* Top nav começa */
+.topnav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5vw;
+    background-color: #f57c00;
+  }
+  
+  .topnav-container a {
+    text-decoration: none;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 100;
+  }
+  
+  .topnav-container ul li a:hover {
+    font-weight: 700;
+  }
+  
+  .topnav-container ul {
+    list-style-type: none;
+  }
+  
+  .topnav-container li {
+    display: inline;
+    margin-right: 2vw;
+  }
+  
+  /* icones da top-nav */
+  .social-icons {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+  }
+  /* Top nav termina */

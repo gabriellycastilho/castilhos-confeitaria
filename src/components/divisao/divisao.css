@@ -1,0 +1,5 @@
+.divisao {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #a1a1a1cb, transparent);
+  }

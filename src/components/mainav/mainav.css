@@ -1,0 +1,49 @@
+.logo {
+  margin-right: 16vw;
+}
+
+.logo img {
+  width: 7rem; /* Limitar a largura da logo */
+  max-width: 100%; /* Garantir que a logo nunca ultrapasse o limite */
+  height: auto;
+}
+
+.mainav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 10vh;
+  width: 100%;
+  background-color: #f5f5f5;
+  padding: 6vh 0; /* Ajuste de padding */
+}
+
+.mainav-container ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.mainav-container li {
+  margin-right: 1vw;
+  margin-left: 5vw;
+}
+
+.mainav-container li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  font-size: 0.9rem;
+}
+
+/* icones da main nav */
+.pedido-icon,
+.sabores-icon,
+.eventos-icon,
+.promocoes-icon {
+  fill: black;
+  margin-bottom: 1.5vh;
+  width: 2rem;
+  height: 2rem;
+}
