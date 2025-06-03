@@ -13,12 +13,10 @@ const Footer = () => {
               alt="Logotipo"
             />
           </a>
-          <div className="morada">
-            <h5 className="rua">R. da Maragenha, Viseu</h5>
-            <h5 className="numero">+351 915 908 352</h5>
-            <h5 className="email">contato@brazukadoces.com.br</h5>
-            <h5>(chamada para rede fixa nacional)</h5>
-          </div>
+            <h5 className="rua">R. Pernambuco, Jardim Elizabeth</h5>
+            <h5 className="numero">11 97614-1427 / 11 98996-0189</h5>
+            <h5 className="email">contato@castilhosconfeitaria.com.br</h5>
+            <h5 className="chamada">(chamada para rede fixa nacional)</h5>
         </div>
         <div className="links-container">
           <ul className="links-pedido">
@@ -46,7 +44,7 @@ const Footer = () => {
       </div>
       <div className="direitos">
         <h5>
-          ©BRAZUKA DOCES. Todos os direitos reservados - Marca registrada.
+          ©CASTILHOS. Todos os direitos reservados - Marca registrada.
         </h5>
         <h5>Site criado por: Gabrielly Castilho</h5>
       </div>

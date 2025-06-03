@@ -3,18 +3,19 @@
 }
 
 .logo img {
-  width: 7rem; /* Limitar a largura da logo */
+  width: 8rem; /* Limitar a largura da logo */
   max-width: 100%; /* Garantir que a logo nunca ultrapasse o limite */
   height: auto;
+ margin-top: 0.5rem;
 }
 
 .mainav-container {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 10vh;
+  height: 14vh;
   width: 100%;
-  background-color: #f5f5f5;
+  background-color: #FFF5F2;
   padding: 6vh 0; /* Ajuste de padding */
 }
 

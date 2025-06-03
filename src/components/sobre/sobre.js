@@ -5,69 +5,75 @@ import { ReactComponent as CoraçãoIcon } from "../../assets/icons/coração.sv
 import { ReactComponent as EuroIcon } from "../../assets/icons/euro.svg";
 import { ReactComponent as QualidadeIcon } from "../../assets/icons/qualidade.svg";
 
+import { motion } from "framer-motion";
+
+
 const Sobre = () => {
   return (
-      <section id="sobre">
-        <div className="text-container">
-          <h2>
-            Olá! Somos a <span>Brazuka Doces.</span>
-          </h2>
-          <p>
-            Nossa história começou em 2018 no Brasil, movidos pela paixão por
-            doces que proporcionam momentos especiais. Em 2022, trouxemos esse
-            carinho para Portugal, com o desejo de conquistar paladares e criar
-            novas memórias através de sabores irresistíveis.
-          </p>
-          <p>
-            Cada produto que fazemos é pensado com dedicação, qualidade e aquele
-            toque caseiro que faz toda a diferença. Acreditamos que um bom doce
-            tem o poder de despertar sorrisos, aproximar pessoas e tornar
-            qualquer ocasião ainda mais especial.
-          </p>
-          <p>
-            Estamos felizes em encantar cada vez mais o público português com
-            nosso sabor surpreendente, atenção aos detalhes e preço justo. Para
-            nós, mais do que vender doces, é sobre compartilhar amor em cada
-            pedacinho.
-          </p>
+    <section id="sobre">
+      {/* TEXTO ANIMADO AO ROLAR */}
+      <motion.div
+        className="text-container"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+      >
+        <h2>
+          Olá! Somos a <span>Castilhos.</span>
+        </h2>
 
-          <p>
-            Seja bem-vindo à nossa história – e aproveite cada mordida dessa
-            experiência!
-          </p>
-        </div>
-        <div className="box-container">
-          <div className="box diferente">
-            <SaborIcon
-              width={80}
-              height={80}
-            />
-            <h3>Sabor Incomparável</h3>
-          </div>
-          <div className="box">
-            <CoraçãoIcon
-              width={80}
-              height={80}
-            />
-            <h3>Feito com Amor</h3>
-          </div>
-          <div className="box">
-            <EuroIcon
-              width={80}
-              height={80}
-            />
-            <h3>Preço Justo</h3>
-          </div>
-          <div className="box diferente">
-            <QualidadeIcon
-              width={80}
-              height={80}
-            />
-            <h3>Qualidade que Surpreende</h3>
-          </div>
-        </div>
-      </section>
+        <p>
+          Somos uma família simples e unida, guiada pela fé em Deus e pelo amor
+          em tudo o que fazemos. Moramos em Mauá, e foi no aconchego do nosso
+          lar que nasceu o desejo de levar carinho, sabor e felicidade para a
+          vida das pessoas.
+        </p>
+
+        <p>
+          Cada pão de mel, bolo de pote, lanche natural e pão caseiro é feito
+          com ingredientes selecionados e, acima de tudo, com muito cuidado,
+          amor e respeito por quem vai receber. Acreditamos que cozinhar é uma
+          forma de demonstrar afeto, e é isso que colocamos em cada receita: a
+          nossa dedicação, nossa alegria e os valores que trazemos no coração.
+        </p>
+
+        <p>
+          Mais do que vender doces e lanches, queremos criar momentos especiais,
+          com aquele sabor de casa que aquece a alma. Seja muito bem-vindo à
+          nossa história, que é escrita todos os dias com fé, trabalho e
+          gratidão.
+        </p>
+
+        <p>
+          E não se esqueça: aproveite cada mordida dessa experiência!
+        </p>
+      </motion.div>
+
+      {/* BOXES ANIMADAS AO ROLAR UMA POR UMA */}
+      <div className="box-container">
+        {[ // array com os dados das boxes
+          { icon: <SaborIcon width={80} height={80} />, title: "Sabor Incomparável" },
+          { icon: <CoraçãoIcon width={80} height={80} />, title: "Feito com Amor" },
+          { icon: <EuroIcon width={80} height={80} />, title: "Preço Justo" },
+          { icon: <QualidadeIcon width={80} height={80} />, title: "Qualidade que Surpreende" },
+        ].map((box, index) => (
+          <motion.div
+            key={index}
+            className={`box ${index % 2 === 0 ? "diferente" : ""}`}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 * index, duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            {box.icon}
+            <h3>{box.title}</h3>
+          </motion.div>
+        ))}
+      </div>
+    </section>
   );
 };
 
 export default Sobre;
+

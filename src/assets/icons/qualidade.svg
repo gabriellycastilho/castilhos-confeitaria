@@ -1,6 +1,6 @@
 <svg
               className="icon-color-diferente"
-              fill="#000000"
+              fill="currentColor"
               height="80px"
               width="80px"
               version="1.1"

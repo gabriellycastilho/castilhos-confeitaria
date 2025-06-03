@@ -1,6 +1,6 @@
 footer {
-  background-color: #f57c00;
-  margin-top: 5rem;
+  background-color: #6d2c09;
+
   height: 56vh;
 }
 
@@ -19,20 +19,25 @@ footer ul {
   width: 10rem; /* Limitar a largura da logo */
   max-width: 100%; /* Garantir que a logo nunca ultrapasse o limite */
   height: auto;
-  border-bottom: 1px solid #ffffff86;
-  padding-bottom: 1.5em;
+  margin-left: 2rem;
 }
 
-/*Informações em baixo da logo*/
-.morada h5 {
+.logo-footer h5 {
   color: white;
   font-weight: 100;
+}
+
+.logo-footer {
+margin-top: -0.5rem;
 }
 
 .email {
   margin-bottom: 1.5rem;
 }
-/*Informações em baixo da logo*/
+
+.rua, .numero, .email, .chamada {
+  text-align: center;
+}
 
 /*Links úteis*/
 .links-pedido h3 {
@@ -90,7 +95,7 @@ p {
   align-items: center;
   padding: 1rem;
   height: 10vh;
-  background-color: #ffecb3;
+  background-color: #fff5f2;
 }
 
 .direitos h5 {

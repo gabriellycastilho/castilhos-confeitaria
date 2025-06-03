@@ -2,7 +2,7 @@
 #sobre {
     display: flex;
     padding: 5rem;
-    background-color: #f5f5f5;
+    background-color: #FFF5F2;
   }
   
   #sobre h2 {
@@ -27,9 +27,10 @@
   }
   
   .text-container span {
-    font-family: "chewy", sans-serif;
-    letter-spacing: 0.3rem;
-    text-transform: uppercase;
+    font-family: 'Handelson Three', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 100;
+    color: #FFA5B4;
   }
   
   .box-container {
@@ -65,21 +66,21 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #f57b00;
-    color: #ffecb3;
+    background-color: #6D2C09;
+    color: #FFA5B4;
     gap: 2vw;
   }
   
   .diferente {
-    background-color: #ffecb3;
-    color: #f57b00;
+    background-color: #FFA5B4;
+    color: #6D2C09;
   }
   
   .icon-color {
-    fill: #ffecb3;
+    fill: #FFA5B4;
   }
   
   .icon-color-diferente {
-    fill: #f57b00;
+    fill: #FFA5B4;
   }
   /* Sobre termina */
