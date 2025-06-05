@@ -1,0 +1,71 @@
+.doce-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  height: 100%;
+  max-width: 280px;
+  width: 100%; /* para ocupar todo o espaço disponível até o max */
+}
+
+.doce-card-img {
+  width: 100%;
+  height: 180px; /* altura fixa */
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.doce-card-nome {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.doce-card-sabores {
+  list-style-type: none;
+  padding: 0;
+  margin: 0.5rem 0 1rem;
+  font-size: 0.9rem;
+}
+
+.doce-card-sabores li {
+  margin-bottom: 0.2rem;
+}
+
+.doce-card-preco {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #444;
+}
+
+.doce-card-botao {
+  background: linear-gradient(135deg, #ffa5b4, #ff7b96);
+  border: none;
+  padding: 0.75rem 1.2rem;
+  border-radius: 50px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.doce-card-botao:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.doce-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto; /* joga esse bloco pro fim do flex */
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #cfcdcd;
+}
