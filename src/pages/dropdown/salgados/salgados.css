@@ -1,0 +1,43 @@
+/* Estilos gerais do container da página */
+.salgados-container {
+  padding: 2rem;
+  color: #333333;
+  background-color: white;
+}
+
+/* Título “Salgados” */
+.salgados-title {
+  font-family: 'Handelson Three', cursive;
+  font-size: 5rem;
+  font-weight: 100;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* “Botão” não clicável */
+.salgados-subtitle {
+  display: block;
+  margin: 0 auto 2rem;
+  width: fit-content;
+  background-color: #FFA5B4;
+  color: #000000;
+  font-size: 0.90rem;
+  font-weight: 100;
+  padding: 0.5rem 1.5rem;
+  border-radius: 1.5rem;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  align-items: center;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* Container para os cards em grid */
+.salgados-cards-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+}

@@ -25,14 +25,14 @@ const Mainav = () => {
             Produtos e Sabores
           </div>
           <ul className="dropdown-menu">
+             <li>
+              <NavLink to="/doces">Doces</NavLink>
+            </li>
             <li>
               <NavLink to="/salgados">Salgados</NavLink>
             </li>
             <li>
-              <NavLink to="/doces">Doces</NavLink>
-            </li>
-            <li>
-              <NavLink to="/bolos-confeitados">Bolos Confeitados</NavLink>
+              <NavLink to="/bolos">Bolos Confeitados</NavLink>
             </li>
             <li>
               <NavLink to="/todos">VER TODOS</NavLink>
