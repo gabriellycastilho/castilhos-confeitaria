@@ -42,9 +42,11 @@ const produtosSalgados = [
 const Salgados = () => {
   return (
     <div className="salgados-container">
+        <div className="salgados-header">
       <h1 className="salgados-title">Salgados</h1>
       <div className="salgados-subtitle">
         os melhores lanches e pães de Mauá
+      </div>
       </div>
 
       <div className="salgados-cards-list">

@@ -1,18 +1,66 @@
 .bolos-container {
-  padding: 2rem;
   background-color: #fff;
-  margin-left: 2rem;
-  margin-right: 2rem;
-  color: black; /* marrom */
+  margin: 0 auto;
+  color: black;
+}
+
+.bolos-header {
+  position: relative;
+  background-image: url("../../../assets/images/bolosconfeitadosbackground.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 300px; /* ou o tamanho que quiser */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white; /* deixa o texto visível por cima do overlay */
+  overflow: hidden;
+    margin-bottom: 2rem;
+  
+}
+
+.bolos-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* overlay preto com 40% opacidade */
+  z-index: 1;
 }
 
 .bolos-title {
   font-family: 'Handelson Three', cursive;
-  font-size: 5rem;   
-  font-weight: 100;  
-  color: #000000;      
+  font-size: 4rem;
+  font-weight: 100;
+  color: white;
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
+  z-index: 2;
+}
+
+/* “Botão” não clicável */
+.bolos-subtitle {
+  display: block;
+  margin: 0 auto 2rem;
+   width: fit-content; 
+  background-color: #FFA5B4; 
+  color: #000000;
+  font-size: 0.90rem;
+  font-weight: 100;
+  padding: 0.5rem 1.5rem;
+  border-radius: 1.5rem;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+ align-items: center;
+  cursor: default;      /* indica que não é clicável */
+  pointer-events: none; /* garante que nunca será clicável */
+  z-index: 2;
 }
 
 .bolos-grid {
@@ -25,23 +73,91 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  padding: 2rem;
 }
 
-.bolos-info h2,
-.bolos-info h3 {
-  color: #FFA5B4;
+.bolos-card {
+  background-color: #fff0f4;
+  border-left: 6px solid #ffa5b4;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.bolos-card h2 {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  color: #ff7b96;
+}
+
+.bolos-card h3 {
+  color: #ffa5b4;
+  margin-top: 1rem;
   margin-bottom: 0.5rem;
+  font-size: 1.1rem;
 }
 
-.bolos-info ul {
+.bolos-card ul {
+  list-style: disc;
   padding-left: 1.5rem;
-  list-style-type: disc;
+  margin: 0;
+  color: #333;
 }
 
-.bolos-info p {
-    color: #000000;
-  margin: 0.3rem 0;
+.bolos-card p {
+  margin: 0.4rem 0;
+  color: #333;
   line-height: 1.5;
+}
+
+.recheios-box {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-weight: bold;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+}
+
+.tradicional {
+  background-color: #ffe6ea;
+  color: #d94a61;
+}
+
+.especial {
+  background-color: #ffdce3;
+  color: #b82c4c;
+}
+
+.bolos-card.aviso {
+  background-color: #fff7f9;
+  border-left-color: #ffb6c1;
+  font-style: italic;
+}
+
+.bolos-botao {
+  background: linear-gradient(135deg, #ffa5b4, #ff7b96);
+  border: none;
+  padding: 0.9rem 1.5rem;
+  border-radius: 30px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  align-self: center;
+  margin-top: 2rem;
+}
+
+.bolos-botao:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
 
 .bolos-gallery {
@@ -50,14 +166,13 @@
   gap: 0.7rem;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
   animation: fadeIn 1s ease-in-out;
 }
 
 .bolos-gallery img {
   width: calc(50% - 0.7rem);
-  max-width: 180px;
-  height: 30vh; /* altura fixa */
+  max-width: 200px;
+  height: 300px;
   border-radius: 1rem;
   object-fit: cover;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
@@ -66,7 +181,6 @@
   animation: imageFadeIn 0.6s forwards;
   display: block;
 }
-
 
 .bolos-gallery img:nth-child(1) { animation-delay: 0.1s; }
 .bolos-gallery img:nth-child(2) { animation-delay: 0.2s; }
@@ -78,7 +192,6 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
-/* Animações */
 @keyframes imageFadeIn {
   from {
     opacity: 0;
@@ -90,27 +203,16 @@
   }
 }
 
-.bolos-botao {
- background: linear-gradient(135deg, #ffa5b4, #ff7b96);
-  border: none;
-  padding: 0.75rem 1.2rem;
-  border-radius: 50px;
-  font-weight: bold;
-  color: white;
-  cursor: pointer;
-  margin-top: 5rem;
-  font-size: 0.9rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-
 @media (max-width: 768px) {
   .bolos-grid {
     grid-template-columns: 1fr;
+  }
+
+  .recheios-box {
+    flex-direction: column;
   }
 
   .bolos-title {
     font-size: 2.5rem;
   }
 }
-

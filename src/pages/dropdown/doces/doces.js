@@ -1,6 +1,6 @@
 import React from "react";
 import "./doces.css";
-import ProductCard from "../../../components/productcard/productcard"; // ajuste para o novo componente
+import ProductCard from "../../../components/productcard/productcard"; 
 
 // IMPORTAÇÃO CERTA DAS IMAGENS
 import paoDeMelImg from "../../../assets/images/paodemelsabores.jpg";
@@ -76,8 +76,10 @@ const produtosDoces = [
 const Doces = () => {
   return (
     <div className="doces-container">
+        <div className="doces-header">
       <h1 className="doces-title">Doces</h1>
       <div className="doces-subtitle">os melhores docinhos de Mauá</div>
+      </div>
 
       <div className="doces-cards-list">
         {produtosDoces.map((produto) => (

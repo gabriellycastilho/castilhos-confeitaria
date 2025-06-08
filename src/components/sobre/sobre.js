@@ -60,7 +60,7 @@ const Sobre = () => {
         ].map((box, index) => (
           <motion.div
             key={index}
-            className={`box ${index % 2 === 0 ? "diferente" : ""}`}
+            className={`box ${index === 0 || index === 3 ? "diferente" : ""}`}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 * index, duration: 0.6 }}

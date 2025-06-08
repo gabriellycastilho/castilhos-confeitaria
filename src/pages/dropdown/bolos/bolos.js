@@ -7,63 +7,72 @@ import bolo4 from "../../../assets/images/bolo4.jpeg";
 import bolo5 from "../../../assets/images/bolo5.jpeg";
 import bolo6 from "../../../assets/images/bolo6.jpeg";
 import bolo7 from "../../../assets/images/bolo7.jpeg";
-import bolo8 from "../../../assets/images/bolo8.jpeg";
 import bolo9 from "../../../assets/images/bolo9.jpeg";
 
 const Bolos = () => {
   return (
     <div className="bolos-container">
-      <h1 className="bolos-title">Bolos Confeitados</h1>
+      <div className="bolos-header">
+        <h1 className="bolos-title">Bolos Confeitados</h1>
+        <div className="bolos-subtitle">
+          os melhores bolos confeitados de Mauá
+        </div>
+      </div>
 
       <section className="bolos-grid">
         <div className="bolos-info">
-          <div className="bolos-valores">
-            <h2>Valores</h2>
+          <div className="bolos-card">
+            <h2>🎂 Valores</h2>
             <p>
-              R$ 80,00 o KG para os <strong>recheios tradicionais</strong>
+              <strong>R$ 80,00 o KG</strong> para recheios{" "}
+              <span className="tag tradicional">tradicionais</span>
             </p>
             <p>
-              <strong>+R$10,00</strong> para recheios especiais
+              <strong>+R$10,00</strong> para recheios{" "}
+              <span className="tag especial">especiais</span>
             </p>
           </div>
 
-          <div className="bolos-recheios">
-            <div>
-              <h3>Recheios Tradicionais</h3>
-              <ul>
-                <li>Abacaxi</li>
-                <li>Abacaxi c/ coco</li>
-                <li>Brigadeiro</li>
-                <li>Doce de leite</li>
-                <li>Leite ninho</li>
-                <li>Prestígio</li>
-              </ul>
-            </div>
-            <div>
-              <h3>Recheios Especiais</h3>
-              <ul>
-                <li>Ninho c/ Nutella ou morango</li>
-                <li>Doce de leite c/ coco, abacaxi ou ameixa</li>
-                <li>Ganache: chocolate ao leite, branco ou maracujá</li>
-              </ul>
+          <div className="bolos-card">
+            <h2>🍫 Recheios</h2>
+            <div className="recheios-box">
+              <div>
+                <h3>Tradicionais</h3>
+                <ul>
+                  <li>Abacaxi</li>
+                  <li>Abacaxi c/ coco</li>
+                  <li>Brigadeiro</li>
+                  <li>Doce de leite</li>
+                  <li>Leite ninho</li>
+                  <li>Prestígio</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Especiais</h3>
+                <ul>
+                  <li>Ninho c/ Nutella ou morango</li>
+                  <li>Doce de leite c/ coco, abacaxi ou ameixa</li>
+                  <li>Ganache: chocolate ao leite, branco ou maracujá</li>
+                </ul>
+              </div>
             </div>
           </div>
 
-          <div className="bolos-massas">
-            <h3>Massas</h3>
+          <div className="bolos-card">
+            <h2>🍰 Massas</h2>
             <ul>
               <li>Branca</li>
               <li>Chocolate 33% cacau</li>
             </ul>
           </div>
 
-          <div className="bolos-condicoes">
+          <div className="bolos-card aviso">
+            <h2>📌 Condições</h2>
             <p>
-              <strong>50% de entrada</strong> no ato da encomenda
+              <strong>50% de entrada</strong> no ato da encomenda.
             </p>
             <p>
-              Cancelamentos em menos de 24h{" "}
-              <strong>não têm reembolso do valor de entrada.</strong>
+              Cancelamentos com menos de 24h <strong>não têm reembolso</strong>.
             </p>
           </div>
 
@@ -89,23 +98,19 @@ const Bolos = () => {
           />
           <img
             src={bolo5}
-            alt="Bolo confeitado 4"
+            alt="Bolo confeitado 5"
           />
           <img
             src={bolo6}
-            alt="Bolo confeitado 4"
+            alt="Bolo confeitado 6"
           />
           <img
             src={bolo7}
-            alt="Bolo confeitado 4"
-          />
-          <img
-            src={bolo8}
-            alt="Bolo confeitado 4"
+            alt="Bolo confeitado 7"
           />
           <img
             src={bolo9}
-            alt="Bolo confeitado 4"
+            alt="Bolo confeitado 9"
           />
         </div>
       </section>
