@@ -1,4 +1,3 @@
-import React from "react";
 import "./produtos.css";
 
 import { motion } from "framer-motion";

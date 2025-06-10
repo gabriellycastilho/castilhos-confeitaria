@@ -2,92 +2,58 @@
   background-color: #fff;
   margin: 0 auto;
   color: black;
+  margin-bottom: 2rem;
+}
+
+.bolos-content {
+  padding: 2rem;
+  margin: 0 auto;
+  max-width: 90rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .bolos-header {
-  position: relative;
-  background-image: url("../../../assets/images/bolosconfeitadosbackground.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 300px; /* ou o tamanho que quiser */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white; /* deixa o texto visível por cima do overlay */
-  overflow: hidden;
-    margin-bottom: 2rem;
-  
-}
-
-.bolos-header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* overlay preto com 40% opacidade */
-  z-index: 1;
-}
-
-.bolos-title {
-  font-family: 'Handelson Three', cursive;
-  font-size: 4rem;
-  font-weight: 100;
-  color: white;
-  text-align: center;
-  margin-bottom: 3rem;
-  z-index: 2;
-}
-
-/* “Botão” não clicável */
-.bolos-subtitle {
-  display: block;
-  margin: 0 auto 2rem;
-   width: fit-content; 
-  background-color: #FFA5B4; 
-  color: #000000;
-  font-size: 0.90rem;
-  font-weight: 100;
-  padding: 0.5rem 1.5rem;
-  border-radius: 1.5rem;
-  opacity: 0.8;
-  text-transform: uppercase;
-  letter-spacing: 0.05rem;
- align-items: center;
-  cursor: default;      /* indica que não é clicável */
-  pointer-events: none; /* garante que nunca será clicável */
-  z-index: 2;
+      background-image: url("../../../assets/images/bolosconfeitadosbackground.jpg");
 }
 
 .bolos-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
+  align-items: stretch;
 }
 
 .bolos-info {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
   padding: 2rem;
+  background-color: #fff5f2;
+  border-radius: 1rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
 }
 
 .bolos-card {
-  background-color: #fff0f4;
-  border-left: 6px solid #ffa5b4;
+  background-color: #fff;
+  border-left: none;
   border-radius: 1rem;
-  padding: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 1.8rem;
+  box-shadow: 0 4px 12px rgba(255, 165, 180, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bolos-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(255, 165, 180, 0.3);
 }
 
 .bolos-card h2 {
   margin-bottom: 1rem;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   color: #ff7b96;
+  border-bottom: 1px solid #ffdce3;
+  padding-bottom: 0.5rem;
 }
 
 .bolos-card h3 {
@@ -98,30 +64,43 @@
 }
 
 .bolos-card ul {
-  list-style: disc;
-  padding-left: 1.5rem;
+  list-style: none;
+  padding: 0;
   margin: 0;
+}
+
+.bolos-card ul li::before {
+  content: "•";
+  color: #ff7b96;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.bolos-card ul li {
   color: #333;
+  margin-bottom: 0.5rem;
 }
 
 .bolos-card p {
-  margin: 0.4rem 0;
-  color: #333;
-  line-height: 1.5;
+  margin: 0.5rem 0;
+  color: #444;
+  line-height: 1.6;
 }
 
 .recheios-box {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
   flex-wrap: wrap;
 }
 
 .tag {
   font-weight: bold;
-  padding: 0.2rem 0.6rem;
+  padding: 0.3rem 0.8rem;
   border-radius: 12px;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 
 .tradicional {
@@ -135,29 +114,30 @@
 }
 
 .bolos-card.aviso {
-  background-color: #fff7f9;
-  border-left-color: #ffb6c1;
-  font-style: italic;
+  background-color: #fff0f4;
+  font-style: normal;
+  border-left: 4px solid #ffa5b4;
+  box-shadow: none;
 }
 
 .bolos-botao {
   background: linear-gradient(135deg, #ffa5b4, #ff7b96);
   border: none;
-  padding: 0.9rem 1.5rem;
-  border-radius: 30px;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
   font-weight: bold;
   color: white;
   cursor: pointer;
   font-size: 1rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   align-self: center;
   margin-top: 2rem;
 }
 
 .bolos-botao:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 20px rgba(255, 165, 180, 0.3);
 }
 
 .bolos-gallery {
@@ -167,6 +147,7 @@
   justify-content: center;
   align-items: center;
   animation: fadeIn 1s ease-in-out;
+  align-items: stretch;
 }
 
 .bolos-gallery img {
@@ -182,10 +163,18 @@
   display: block;
 }
 
-.bolos-gallery img:nth-child(1) { animation-delay: 0.1s; }
-.bolos-gallery img:nth-child(2) { animation-delay: 0.2s; }
-.bolos-gallery img:nth-child(3) { animation-delay: 0.3s; }
-.bolos-gallery img:nth-child(4) { animation-delay: 0.4s; }
+.bolos-gallery img:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.bolos-gallery img:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.bolos-gallery img:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.bolos-gallery img:nth-child(4) {
+  animation-delay: 0.4s;
+}
 
 .bolos-gallery img:hover {
   transform: scale(1.05);

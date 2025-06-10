@@ -1,4 +1,3 @@
-import React from "react";
 import "./productcard.css";
 
 const ProductCard = ({ produto, onAdicionar }) => {

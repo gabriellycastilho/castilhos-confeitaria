@@ -1,0 +1,65 @@
+/* Título */
+.todos-title {
+  font-family: 'Handelson Three', cursive;
+  font-size: 5rem;
+  font-weight: 100;
+  color: white;
+  text-align: center;
+  margin-bottom: 1rem;
+  z-index: 2;
+}
+
+/* “Botão” não clicável */
+.todos-subtitle {
+  display: block;
+  margin: 0 auto 2rem;
+  width: fit-content;
+  background-color: #FFA5B4;
+  color: #000000;
+  font-size: 0.90rem;
+  font-weight: 100;
+  padding: 0.5rem 1.5rem;
+  border-radius: 1.5rem;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  align-items: center;
+  cursor: default;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.todos-header {
+  position: relative;
+  background-image: url("../../../assets/images/todosbackground.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 300px; /* ou o tamanho que quiser */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white; /* deixa o texto visível por cima do overlay */
+  overflow: hidden;
+  
+}
+
+.todos-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* overlay preto com 40% opacidade */
+  z-index: 1;
+}
+
+.todos-cards-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 5rem;
+}

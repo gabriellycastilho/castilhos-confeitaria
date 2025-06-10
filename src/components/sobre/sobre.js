@@ -1,4 +1,3 @@
-import React from "react";
 import "./sobre.css";
 import { ReactComponent as SaborIcon } from "../../assets/icons/sabor.svg";
 import { ReactComponent as CoraçãoIcon } from "../../assets/icons/coração.svg";

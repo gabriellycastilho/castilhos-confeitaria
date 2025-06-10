@@ -1,4 +1,3 @@
-import React from "react";
 import "./mainav.css";
 import logo from "../../assets/images/logo.png";
 import { ReactComponent as ProdutosIcon } from "../../assets/icons/produtos.svg";
