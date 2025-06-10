@@ -21,72 +21,11 @@
   color: #5d4037;
 }
 
-#produtos img {
-  width: auto;
-  height: 10vh;
-  border-radius: 1rem;
-}
-
-/* Botões */
-.button-container {
-  display: grid;
-  grid-template-columns: repeat(3, 2fr);
-  justify-content: center;
-  align-items: center;
-  padding: 5rem;
-  gap: 5vw;
-  min-height: 70vh;
-}
-
-.button {
-  display: flex;
-  flex-direction: column;
-  min-width: 20rem;
-  min-height: 25rem;
-  width: 50%;
-  height: 90%;
-  align-items: center;
-  border: none;
-  border-radius: 1rem;
+.cards-container {
+    display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
   padding: 2rem;
-  box-shadow: 0 3px 18px rgba(245, 124, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
 }
 
-.button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 4px 20px rgb(255, 165, 180, 0.8);
-  color: #FFA5B4;
-  -webkit-text-stroke: 1px #FFA5B4;
-}
 
-.paodemel,
-.brownie,
-.bolodepote {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  font-weight: bold;
-  color: transparent;
-  -webkit-text-stroke: 1px white;
-  writing-mode: vertical-lr;
-  font-size: 2.5rem;
-  padding: 1rem;
-}
-
-.paodemel {
-  background-image: url(../../assets/images/pãodemelbutton.webp);
-  letter-spacing: 0.7rem;
-}
-
-.brownie {
-  background-image: url(../../assets/images/browniebutton.jpg.webp);
-  letter-spacing: 1.5rem;
-}
-
-.bolodepote {
-  background-image: url(../../assets/images/bolodepotebutton.jpe);
-  letter-spacing: 0.3rem;
-}
-/*Produtos termina */

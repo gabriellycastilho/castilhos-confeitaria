@@ -1,7 +1,16 @@
 import "./productcard.css";
 
+import { motion } from "framer-motion";
+
 const ProductCard = ({ produto, onAdicionar }) => {
   return (
+     <motion.div
+      className="product-card-motion"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
     <div className="product-card">
       <h3 className="product-card-nome">{produto.nome}</h3>
       <img
@@ -26,6 +35,7 @@ const ProductCard = ({ produto, onAdicionar }) => {
         </button>
       </div>
     </div>
+    </motion.div>
   );
 };
 

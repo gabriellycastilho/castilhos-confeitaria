@@ -1,4 +1,6 @@
 import "./produtos.css";
+import { produtosDoces } from "../../data/produtosDoces";
+import ProductCard from "../productcard/productcard";
 
 import { motion } from "framer-motion";
 
@@ -24,39 +26,21 @@ const Produtos = () => {
       </motion.h3>
 
       <motion.div
-        className="button-container"
+        className="cards-container"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6, duration: 1 }}
         viewport={{ once: true }}
       >
-        <motion.button
-          className="paodemel button"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          PÃO DE MEL
-        </motion.button>
-
-        <motion.button
-          className="brownie button"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          BROWNIE
-        </motion.button>
-
-        <motion.button
-          className="bolodepote button"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          BOLO DE POTE
-        </motion.button>
+        {produtosDoces.map((produto) => (
+          <ProductCard
+            key={produto.id}
+            produto={produto}
+          />
+        ))}
       </motion.div>
     </section>
   );
 };
 
 export default Produtos;
-

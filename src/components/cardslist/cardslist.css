@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
-  padding: 2rem;
+  padding: 5rem;
 }
 
 .doces-container,
