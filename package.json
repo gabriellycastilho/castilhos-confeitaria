@@ -1,5 +1,5 @@
 {
-  "name": "brazuka-doces",
+  "name": "castilhos-confeitaria",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,12 +8,14 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^13.5.0",
+    "firebase": "^11.9.1",
     "framer-motion": "^12.16.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.5.0",
     "react-scripts": "5.0.1",
     "react-simple-typewriter": "^5.0.1",
+    "swiper": "^11.2.8",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

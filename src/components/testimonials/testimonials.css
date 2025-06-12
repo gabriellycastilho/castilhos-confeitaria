@@ -1,0 +1,143 @@
+.testimonials-container {
+  padding: 4rem 1.5rem;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  background: #FFF5F2;
+  border-radius: 1.5rem;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #6D2C09;
+  margin-bottom: 0.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 4px;
+  background-color: #FFA5B4;
+  border-radius: 2px;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #6D2C09;
+  opacity: 0.8;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  font-style: italic;
+  transition: opacity 0.3s ease;
+}
+
+.subtitle:hover {
+  opacity: 1;
+}
+
+.depo-button {
+  background-color: #6D2C09; /* marrom */
+  color: #FFF5F2; /* rosa claro */
+  border: none;
+  padding: 0.8rem 1.6rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.depo-button:hover {
+  background-color: #FFA5B4; /* rosa mais vibrante */
+  color: #6D2C09;
+  transform: translateY(-2px);
+}
+
+
+.swiper {
+  height: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.testimonial {
+  background-color: #FFA5B4;
+  padding: 2.5rem 2rem;
+  border-radius: 1rem;
+  color: #6D2C09;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 520px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.testimonial:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.text {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.author {
+  font-weight: 700;
+  color: #6D2C09;
+  font-size: 1.1rem;
+}
+
+.swiper-pagination-bullet {
+  background: #6D2C09;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #6D2C09;
+  transform: scale(1.2);
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .testimonial {
+    padding: 2rem 1.5rem;
+  }
+
+  .text {
+    font-size: 1.1rem;
+  }
+
+  .author {
+    font-size: 1rem;
+  }
+}
+
+
+
+
+

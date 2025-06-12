@@ -11,7 +11,13 @@ import Bolos from "../src/pages/dropdown/bolos/bolos";
 import Salgados from "../src/pages/dropdown/salgados/salgados";
 import Todos from "../src/pages/dropdown/todos/todos";
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 
 function App() {
   return (
@@ -19,6 +25,10 @@ function App() {
       <Topnav />
       <Mainav />
       <Routes>
+        <Route
+          path="/"
+          element={<Navigate to="/home" />}
+        />
         <Route
           path="/home"
           element={<Home />}
@@ -35,19 +45,19 @@ function App() {
           path="/promocoes"
           element={<Promocoes />}
         />
-         <Route
+        <Route
           path="/doces"
           element={<Doces />}
         />
-         <Route
+        <Route
           path="/bolos"
           element={<Bolos />}
         />
-         <Route
+        <Route
           path="/salgados"
           element={<Salgados />}
         />
-           <Route
+        <Route
           path="/todos"
           element={<Todos />}
         />
