@@ -1,5 +1,6 @@
 import "./bolos.css";
-import "../../../components/productcard/productcard.css"; // CSS compartilhado entre Doces, Salgados, Bolos e Todos
+import { motion } from "framer-motion";
+import "../../../components/cardslist/productcard/productcard.css"; // CSS compartilhado entre Doces, Salgados, Bolos e Todos
 import produtosBolos from "../../../data/produtosBolos";
 import bolo1 from "../../../assets/images/bolo1.jpeg";
 import bolo2 from "../../../assets/images/bolo2.jpeg";
@@ -25,7 +26,14 @@ const Bolos = () => {
   return (
     <div className="bolos-container">
       <div className="bolos-header">
-        <h1 className="bolos-title">Bolos Confeitados</h1>
+       <motion.h1
+          className="bolos-title"
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          Bolos Confeitados
+        </motion.h1>
         <div className="bolos-subtitle">
           os melhores bolos confeitados de Mauá
         </div>

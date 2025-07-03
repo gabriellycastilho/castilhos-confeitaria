@@ -1,5 +1,61 @@
-.doces-header {
-      background-image: url("../../../assets/images/docesbackground.jpg");
+.doces-container {
+  color: #333333;
+  background-color: white;
 }
 
+.doces-header {
+  position: relative;
+  background-image: url("../../../assets/images/docesbackground.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 300px; /* ou o tamanho que quiser */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white; /* deixa o texto visível por cima do overlay */
+  overflow: hidden;
+}
+
+.doces-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* overlay preto com 40% opacidade */
+  z-index: 1;
+}
+
+.doces-title {
+  font-family: "Handelson Three", cursive;
+  font-size: 5rem;
+  font-weight: 100;
+  color: white;
+  text-align: center;
+  margin-bottom: 1rem;
+  z-index: 2;
+}
+
+.doces-subtitle {
+  display: block;
+  margin: 0 auto 2rem;
+  width: fit-content;
+  background-color: #ffa5b4;
+  color: #000000;
+  font-size: 0.9rem;
+  font-weight: 100;
+  padding: 0.5rem 1.5rem;
+  border-radius: 1.5rem;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  align-items: center;
+  cursor: default; /* indica que não é clicável */
+  pointer-events: none; /* garante que nunca será clicável */
+  z-index: 2;
+}
 

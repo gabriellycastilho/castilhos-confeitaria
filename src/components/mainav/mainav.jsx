@@ -2,7 +2,7 @@ import "./mainav.css";
 import logo from "../../assets/images/logo.png";
 import { ReactComponent as ProdutosIcon } from "../../assets/icons/produtos.svg";
 import { ReactComponent as PromocoesIcon } from "../../assets/icons/promocoes.svg";
-import { ReactComponent as EventosIcon } from "../../assets/icons/eventos.svg";
+import { ReactComponent as CestasIcon } from "../../assets/icons/cestas.svg";
 import { ReactComponent as PedidoIcon } from "../../assets/icons/pedido.svg";
 
 import { NavLink } from "react-router-dom";
@@ -41,21 +41,21 @@ const Mainav = () => {
 
         <li>
           <NavLink to="/pedido">
-            <PedidoIcon width={50} height={50} />
+            <PedidoIcon/>
             Faça seu Pedido
           </NavLink>
         </li>
 
 
         <li>
-          <NavLink to="/eventos">
-            <EventosIcon width={50} height={50} />
-            Festas e Eventos
+          <NavLink to="/cestas">
+            <CestasIcon />
+            Cestas de Presente
           </NavLink>
         </li>
         <li>
           <NavLink to="/promocoes">
-            <PromocoesIcon width={50} height={50} />
+            <PromocoesIcon/>
             Combos e Promoções
           </NavLink>
         </li>

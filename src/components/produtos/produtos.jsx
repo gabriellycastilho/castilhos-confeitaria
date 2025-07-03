@@ -1,8 +1,8 @@
 import "./produtos.css";
 import { produtosDoces } from "../../data/produtosDoces";
-import ProductCard from "../productcard/productcard";
-
 import { motion } from "framer-motion";
+import CardsList from "../cardslist/cardslist";
+
 
 const Produtos = () => {
   return (
@@ -25,22 +25,15 @@ const Produtos = () => {
         Clique para informações e sabores
       </motion.h3>
 
-      <motion.div
-        className="cards-container"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6, duration: 1 }}
-        viewport={{ once: true }}
-      >
-        {produtosDoces.map((produto) => (
-          <ProductCard
-            key={produto.id}
-            produto={produto}
-          />
-        ))}
-      </motion.div>
+      <CardsList
+        produtos={produtosDoces}
+        titulo=""
+        subtitulo=""
+        containerClass="container"
+      />
     </section>
   );
 };
 
 export default Produtos;
+

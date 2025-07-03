@@ -1,8 +1,7 @@
-import React from "react";
 import "./salgados.css";
 import { produtosSalgados } from "../../../data/produtosSalgados"; // importa os dados
 import CardsList from "../../../components/cardslist/cardslist";
-import "../../../components/productcard/productcard.css"; // importa o CSS compartilhado
+import "../../../components/cardslist/productcard/productcard.css"; // importa o CSS compartilhado
 
 const Salgados = () => {
   return (

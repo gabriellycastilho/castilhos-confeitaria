@@ -1,8 +1,7 @@
-import React from "react";
 import "./doces.css";
 import { produtosDoces } from "../../../data/produtosDoces";
-import CardsList from "../../../components/cardslist/cardslist"; 
-import "../../../components/productcard/productcard.css"; // CSS compartilhado entre Doces, Salgados, Bolos e Todos
+import CardsList from "../../../components/cardslist/cardslist";
+import "../../../components/cardslist/productcard/productcard.css"; // CSS compartilhado entre Doces, Salgados, Bolos e Todos
 
 const Doces = () => {
   return (
