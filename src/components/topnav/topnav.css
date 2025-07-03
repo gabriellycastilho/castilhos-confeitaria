@@ -1,36 +1,87 @@
 /* Top nav começa */
 .topnav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 5vw;
-    background-color: #6D2C09;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5vw;
+  background-color: #6d2c09;
+}
+
+.topnav-container a {
+  text-decoration: none;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 100;
+}
+
+.topnav-container ul li a:hover {
+  font-weight: 700;
+}
+
+.topnav-container ul {
+  list-style-type: none;
+}
+
+.topnav-container li {
+  display: inline;
+  margin-right: 2vw;
+}
+
+/* icones da top-nav */
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+}
+
+@media (max-width: 1024px) {
+  .topnav-container {
+    justify-content: center;
+    padding: 8px 4vw;
   }
-  
-  .topnav-container a {
-    text-decoration: none;
-    color: white;
-    font-size: 0.8rem;
-    font-weight: 100;
-  }
-  
-  .topnav-container ul li a:hover {
-    font-weight: 700;
-  }
-  
-  .topnav-container ul {
-    list-style-type: none;
-  }
-  
+
   .topnav-container li {
-    display: inline;
+    margin-right: 3vw;
+  }
+
+  .topnav-container ul {
+    display: flex;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .topnav-container {
+    padding: 6px 3vw;
+  }
+
+  .topnav-container a {
+    font-size: 0.75rem;
+  }
+
+  .topnav-container li {
     margin-right: 2vw;
   }
-  
-  /* icones da top-nav */
+
   .social-icons {
-    display: flex;
-    align-items: center;
-    gap: 1vw;
+    display: none;
   }
-  /* Top nav termina */
+}
+
+@media (max-width: 480px) {
+  .topnav-container {
+    padding: 4px 2vw;
+  }
+
+  .topnav-container a {
+    font-size: 0.75rem;
+  }
+
+  .topnav-container li {
+    margin-right: 2vw;
+  }
+
+  .social-icons {
+    display: none;
+  }
+}

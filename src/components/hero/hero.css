@@ -11,6 +11,7 @@
   text-align: center;
 }
 
+/* Box com blur e fundo rosa transparente */
 .hero-box {
   background: rgba(255, 165, 180, 0.2);
   backdrop-filter: blur(6px);
@@ -19,6 +20,7 @@
   max-width: 700px;
 }
 
+/* Texto boas vindas */
 .boasvindas {
   font-size: 1.5rem;
   color: white;
@@ -35,6 +37,7 @@
   margin-top: 0.3rem;
 }
 
+/* Slogan */
 .slogan {
   font-size: 1.5rem;
   color: white;
@@ -42,5 +45,57 @@
   letter-spacing: 0.03em;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
 }
+
+/* ===== Responsividade ===== */
+
+@media (max-width: 768px) {
+  .hero-container {
+    height: 50vh;
+    padding: 1.5rem 1rem;
+  }
+
+  .hero-box {
+    padding: 1.5rem 2rem;
+    border-radius: 1.5rem;
+    max-width: 90%;
+  }
+
+  .boasvindas {
+    font-size: 1.2rem;
+  }
+
+  .boasvindas span {
+    font-size: 2.2rem;
+  }
+
+  .slogan {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-container {
+    height: 45vh;
+    padding: 1rem 0.5rem;
+  }
+
+  .hero-box {
+    padding: 1rem 1.5rem;
+    border-radius: 1.2rem;
+  }
+
+  .boasvindas {
+    font-size: 1rem;
+  }
+
+  .boasvindas span {
+    font-size: 1.8rem;
+  }
+
+  .slogan {
+    font-size: 1rem;
+  }
+}
+
 
 

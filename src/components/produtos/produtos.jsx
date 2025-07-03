@@ -1,5 +1,5 @@
 import "./produtos.css";
-import { produtosDoces } from "../../data/produtosDoces";
+import { produtosTodos } from "../../data/produtosTodos";
 import { motion } from "framer-motion";
 import CardsList from "../cardslist/cardslist";
 
@@ -26,7 +26,7 @@ const Produtos = () => {
       </motion.h3>
 
       <CardsList
-        produtos={produtosDoces}
+        produtos={produtosTodos}
         titulo=""
         subtitulo=""
         containerClass="container"

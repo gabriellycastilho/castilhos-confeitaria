@@ -6,22 +6,18 @@ import ModalSaboresQuantidade from "../modal/modalSaboresQuantidade";
 import ProductCard from "./productcard/productcard";
 import { toast } from "react-toastify";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+
 const CardsList = ({ produtos, titulo, subtitulo, containerClass }) => {
   const [produtoSelecionado, setProdutoSelecionado] = useState(null);
-
   const { adicionarAoCarrinho } = useContext(CarrinhoContext);
 
-  // Quando clica no botão do card
-  const abrirModal = (produto) => {
-    setProdutoSelecionado(produto);
-  };
-
-  // Quando cancela o modal
-  const fecharModal = () => {
-    setProdutoSelecionado(null);
-  };
-
-  // Quando confirma o modal
+  const abrirModal = (produto) => setProdutoSelecionado(produto);
+  const fecharModal = () => setProdutoSelecionado(null);
   const confirmarAdicionar = (produtoComDetalhes) => {
     adicionarAoCarrinho(produtoComDetalhes);
     toast.success("Produto adicionado ao carrinho!");
@@ -42,15 +38,24 @@ const CardsList = ({ produtos, titulo, subtitulo, containerClass }) => {
         <div className={`${containerClass}-subtitle`}>{subtitulo}</div>
       </div>
 
-      <div className={`${containerClass}-cards-list`}>
+      <Swiper
+        modules={[Navigation]}
+        spaceBetween={16}
+        slidesPerView={1}
+        navigation
+        loop={true}
+        breakpoints={{
+          600: { slidesPerView: 2 },
+          1024: { slidesPerView: 4 },
+        }}
+        className="container-cards-list"
+      >
         {produtos.map((produto) => (
-          <ProductCard
-            key={produto.id}
-            produto={produto}
-            onAdicionar={() => abrirModal(produto)}
-          />
+          <SwiperSlide key={produto.id}>
+            <ProductCard produto={produto} onAdicionar={() => abrirModal(produto)} />
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
 
       {produtoSelecionado && (
         <ModalSaboresQuantidade
@@ -64,6 +69,9 @@ const CardsList = ({ produtos, titulo, subtitulo, containerClass }) => {
 };
 
 export default CardsList;
+
+
+
 
 
 

@@ -1,12 +1,7 @@
-.logo {
-  margin-right: 16vw;
-}
-
 .logo img {
-  width: 8rem;
+  width: 10rem;
   max-width: 100%;
   height: auto;
-  margin-top: 0.5rem;
 }
 
 .mainav-container {
@@ -17,6 +12,7 @@
   width: 100%;
   background-color: #fff5f2;
   padding: 6vh 0;
+  position: relative; /* pra dropdown absoluto */
 }
 
 .mainav-container ul {
@@ -57,23 +53,22 @@
   height: 2rem;
 }
 
-/* Inicio do Dropdown */
+/* Dropdown desktop */
 .dropdown {
   position: relative;
   margin-bottom: 1.5vh;
   height: 2rem;
   font-size: 0.9rem;
+  cursor: pointer;
 }
 
 .dropdown-title {
   display: flex;
   flex-direction: column;
   align-items: center;
-  cursor: pointer;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-/* Dropdown menu: começa escondido, aparece quando passa o mouse por cima */
 .dropdown-menu {
   position: absolute;
   top: 205%;
@@ -118,7 +113,6 @@
   cursor: pointer;
 }
 
-/* Deixa o texto dos links do dropdown visualmente melhor */
 .dropdown-menu li a {
   color: inherit;
   text-decoration: none;
@@ -127,3 +121,164 @@
   font-weight: 500;
   transition: color 0.25s ease;
 }
+
+/* ======== MOBILE ======== */
+
+.hamburguer {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+  z-index: 10001;
+}
+
+.hamburguer span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #000;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animação X do hamburguer */
+.hamburguer.ativo span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburguer.ativo span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburguer.ativo span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 768px) {
+  .mainav-container {
+    height: 4rem; /* altura compacta */
+    padding: 1.5 1rem; /* quase sem padding vertical */
+    flex-wrap: nowrap; /* não quebrar linha */
+  }
+
+  /* Logo menor */
+  .logo img {
+    width: 7rem;
+    margin-left: 0;
+  }
+
+  /* Esconder menu desktop */
+  .mainav-container ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fff5f2;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1rem 0;
+    overflow-y: auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    z-index: 9998;
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+  }
+
+  /* Mostrar menu se aberto */
+  .mainav-container ul.aberto {
+    display: flex;
+    transform: translateX(0);
+  }
+
+  .hamburguer {
+    display: flex;
+     width: 25px;
+    height: 20px;
+  }
+
+  .mainav-container li {
+    margin: 0;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .mainav-container li a {
+    font-size: 1.2rem;
+    color: #222;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .mainav-container li a:hover {
+    color: #ffa5b4;
+    transform: none;
+  }
+
+  /* Dropdown mobile - não hover, mas clicável */
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    visibility: visible !important;
+    opacity: 1 !important;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding-left: 1.5rem;
+  }
+
+  .dropdown-menu.aberto {
+    max-height: 500px; /* altura suficiente pra mostrar tudo */
+  }
+
+  .dropdown-title {
+    cursor: pointer;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: 600;
+    color: #222;
+  }
+
+  .dropdown-title:hover {
+    color: #ffa5b4;
+    transform: none;
+  }
+
+  /* Seta do dropdown mobile */
+  .seta {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+    margin-left: 0.5rem;
+  }
+
+  .seta.aberta {
+    transform: rotate(180deg);
+  }
+}
+
+@media (max-width: 480px) {
+  /* Logo ainda menor no celular */
+  .logo img {
+    width: 9rem;
+  }
+
+  /* Ajuste na fonte dos links */
+  .mainav-container li a {
+    font-size: 1rem;
+  }
+
+  /* Espaçamento dos itens do menu */
+  .mainav-container li {
+    padding: 0.6rem 1rem;
+  }
+
+  /* Dropdown padding menor */
+  .dropdown-menu {
+    padding-left: 1rem;
+  }
+}
+

@@ -1,4 +1,4 @@
-/*Produtos começa */
+/* Produtos começa */
 #produtos {
   padding: 5vw 10vw;
   background-color: #FFF5F2;
@@ -21,11 +21,37 @@
   color: #5d4037;
 }
 
-.cards-container {
-    display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  padding: 2rem;
+/* Responsividade */
+
+/* Tablets e telas médias */
+@media (max-width: 1024px) {
+  #produtos {
+    padding: 4vw 6vw;
+  }
+  #produtos h2 {
+    width: 90%;
+  }
 }
+
+/* Celulares */
+@media (max-width: 600px) {
+  #produtos {
+    padding: 3vw 3vw;
+  }
+  .cards-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  #produtos h2 {
+    font-size: 1.3rem;
+    width: 100%;
+  }
+  #produtos h3 {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+}
+
 
 
