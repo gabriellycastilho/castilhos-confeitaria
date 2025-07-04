@@ -27,10 +27,11 @@ const Testimonials = () => {
         loop={true}
         spaceBetween={30}
         slidesPerView={1}
+        className="testi-swiper"
         style={{ height: '100%' }}
       >
         {testimonials.map(({ nome, texto }, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide key={index} className="testi-swiper-slide">
             <AnimatePresence mode="wait">
               <motion.div
                 className="testimonial"
@@ -52,6 +53,7 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
+
 
 
 

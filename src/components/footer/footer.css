@@ -1,6 +1,5 @@
 footer {
   background-color: #6d2c09;
-
   height: 56vh;
 }
 
@@ -13,6 +12,7 @@ footer ul {
   gap: 10rem;
   padding: 5rem;
   justify-content: flex-start;
+  flex-wrap: wrap; /* pra quebrar em telas pequenas */
 }
 
 .logo-footer img {
@@ -28,7 +28,7 @@ footer ul {
 }
 
 .logo-footer {
-margin-top: -0.5rem;
+  margin-top: -0.5rem;
 }
 
 .email {
@@ -57,6 +57,7 @@ margin-top: -0.5rem;
 
 .links-container ul {
   list-style: none;
+  padding-left: 0; /* tirar padding default */
 }
 
 .links-container ul li::before {
@@ -66,7 +67,7 @@ margin-top: -0.5rem;
   font-size: 1rem;
   font-weight: bold;
 }
-/*Links úteos*/
+/*Links úteis*/
 
 /*Horário de atendimento*/
 .atendimento-container h3,
@@ -103,4 +104,69 @@ p {
   font-size: 1em;
   color: #5d4037;
 }
-/*Direitos reservados*/
+
+/* === Responsividade === */
+@media (max-width: 1024px) {
+  .footer-container {
+    gap: 5rem;
+    padding: 3rem 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  footer {
+    height: auto; /* deixa crescer conforme conteúdo */
+    padding-bottom: 2rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 3rem;
+    padding: 2rem;
+  }
+
+  .logo-footer img {
+    margin-left: 0;
+    margin-bottom: 1rem;
+    width: 8rem;
+  }
+
+  .links-container,
+  .atendimento-container {
+    width: 100%;
+    text-align: center;
+  }
+
+  .rua, .numero, .email, .chamada {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 1.5rem 1rem;
+    gap: 2rem;
+  }
+
+  .logo-footer img {
+    width: 7rem;
+  }
+
+  .links-pedido h3,
+  .atendimento-container h3 {
+    font-size: 1.1rem;
+  }
+
+  .links-pedido,
+  .links-politica,
+  .links-sugestoes,
+  .atendimento-container p,
+  .atendimento-container .horarios {
+    font-size: 0.9rem;
+  }
+  
+  .footer-container > div {
+    padding: 0 1rem;
+  }
+}
+

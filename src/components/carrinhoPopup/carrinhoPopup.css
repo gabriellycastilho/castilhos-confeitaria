@@ -35,49 +35,131 @@
   display: flex;
   flex-direction: column;
   position: fixed;
-  top: 10rem; 
-  right: 1.25rem; 
+  top: 8rem;
+  right: 1.5rem;
   background-color: white;
-  border: 0.0625rem solid #ddd; 
-  border-radius: 0.625rem; 
-  padding: 1.25rem; 
-  width: 18.75rem; 
-  max-height: 45rem; 
-  min-height: 35rem;
+  border: 1px solid #ddd;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  width: 24rem; /* Aumentei a largura */
+  max-height: 80vh;
   overflow-y: auto;
-  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.15); 
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.2);
   z-index: 999;
 }
 
 .popup-carrinho h3 {
   margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
 }
 
 .popup-carrinho ul {
   list-style: none;
   padding: 0;
-  margin: 0.625rem 0; 
+  margin: 0;
 }
 
-.popup-carrinho li {
+.item-carrinho {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column; /* Cada item em coluna */
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.item-carrinho > div {
+  margin-bottom: 0.5rem;
+}
+
+.quantidade-container {
+  display: flex;
   align-items: center;
-  margin-bottom: 0.625rem; 
+  gap: 0.5rem;
 }
 
-.popup-carrinho button {
-  margin-top: auto;
-  background-color: #ff4d4d;
-  color: white;
-  top: 10rem;
+.quantidade-container button {
+  padding: 0.3rem 0.6rem;
+  font-weight: bold;
+  background-color: #ffa5b4;
   border: none;
-  padding: 0.375rem 0.625rem; 
-  border-radius: 0.3125rem; 
+  border-radius: 4px;
   cursor: pointer;
+  color: white;
+  transition: background-color 0.2s;
 }
 
-.popup-carrinho button:hover {
-  background-color: #e60000;
+.quantidade-container button:hover {
+  background-color: #ff7b94;
 }
+
+.botao-remover {
+  background: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  border-radius: 4px;
+  align-self: flex-start;
+  transition: background-color 0.2s;
+}
+
+.botao-remover:hover {
+  background: #e60000;
+}
+
+.popup-carrinho h4 {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  text-align: right;
+}
+
+.botoes-rodape {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.botao-whatsapp {
+  flex: 7; 
+  background-color: #7fcf7f; 
+  color: white;
+  font-weight: bold;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  border: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.botao-whatsapp:hover {
+  background-color: #65b465;
+}
+
+.botao-fechar {
+  flex: 3; 
+  background-color: #ffa5b4;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.botao-fechar:hover {
+  background-color: #ff7b94;
+}
+
+
+
+
 

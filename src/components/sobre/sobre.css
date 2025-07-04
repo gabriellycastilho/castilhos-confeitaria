@@ -1,79 +1,139 @@
-  /* Sobre começa */
+#sobre {
+  display: flex;
+  padding: 5rem;
+  background-color: #FFF5F2;
+}
+
+#sobre h2 {
+  font-size: 1.9rem;
+  margin-bottom: 2em;
+  letter-spacing: 0.1rem;
+  color: #5d4037;
+}
+
+#sobre p {
+  margin-bottom: 2em;
+  width: 90%;
+  font-size: 0.9rem;
+  text-align: justify;
+  color: #5d4037;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text-container span {
+  font-family: 'Handelson Three', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 100;
+  color: #FFA5B4;
+}
+
+/* Grid das boxes */
+.box-container {
+  display: grid;
+  grid-template-columns: repeat(2, 300px); /* 2 colunas fixas */
+  grid-template-rows: repeat(2, 320px);
+  padding: 2rem;
+  gap: 0; /* sem espaço entre as boxes */
+  justify-content: center; /* centraliza o grid */
+}
+
+/* Títulos das boxes */
+.box-container h3 {
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+
+/* Bordas arredondadas nos cantos */
+.box-container > div:first-child {
+  border-top-left-radius: 10px;
+}
+
+.box-container > div:nth-last-child(3) {
+  border-top-right-radius: 10px;
+}
+
+.box-container > div:nth-child(3) {
+  border-bottom-left-radius: 10px;
+}
+
+.box-container > div:last-child {
+  border-bottom-right-radius: 10px;
+}
+
+/* Remove cores por nth-child(odd/even) para grid 2x2 */
+/* Define cores fixas tipo xadrez */
+.box-container > div:nth-child(1),
+.box-container > div:nth-child(4) {
+  background-color: #6D2C09; /* marrom */
+  color: #FFA5B4;
+}
+
+.box-container > div:nth-child(2),
+.box-container > div:nth-child(3) {
+  background-color: #FFA5B4; /* rosa */
+  color: #6D2C09;
+}
+
+/* Box em si */
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
   #sobre {
-      display: flex;
-      padding: 5rem;
-      background-color: #FFF5F2;
-    }
-    
-    #sobre h2 {
-      font-size: 1.9rem;
-      margin-bottom: 2em;
-      letter-spacing: 0.1rem;
-      color: #5d4037;
-    }
-    
-    #sobre p {
-      margin-bottom: 2em;
-      width: 90%;
-      font-size: 0.9rem;
-      text-align: justify;
-      color: #5d4037;
-    }
-    
-    .text-container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    
-    .text-container span {
-      font-family: 'Handelson Three', sans-serif;
-      font-size: 3.5rem;
-      font-weight: 100;
-      color: #FFA5B4;
-    }
-    
-    .box-container {
-      display: grid;
-      grid-template-columns: repeat(2, 300px); /* Duas colunas */
-      grid-template-rows: repeat(2, 320px);
-      padding: 2rem;
-    }
-    
-    .box-container h3 {
-      font-weight: 300;
-      font-size: 1.2rem;
-    }
-    
-    .box-container > div:first-child {
-      border-top-left-radius: 10px;
-    }
-    
-    .box-container > div:nth-last-child(3) {
-      border-top-right-radius: 10px;
-    }
-    
-    .box-container > div:nth-child(3) {
-      border-bottom-left-radius: 10px;
-    }
-    
-    .box-container > div:last-child {
-      border-bottom-right-radius: 10px;
-    }
-    
-    .box {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background-color: #6D2C09;
-      color: #FFA5B4;
-      gap: 2vw;
-    }
-    
-    .diferente {
-      background-color: #FFA5B4;
-      color: #6D2C09;
-    }
-    
-    /* Sobre termina */
+    flex-direction: column;
+    padding: 3rem 2rem;
+  }
+
+  #sobre p {
+    width: 100%;
+  }
+
+  .box-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas flexíveis */
+    grid-template-rows: repeat(2, 250px);
+    gap: 0;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  #sobre {
+    padding: 2rem 1rem;
+  }
+
+  .box-container {
+    grid-template-columns: 1fr; /* 1 coluna só */
+    grid-template-rows: none;
+    padding: 1rem 0;
+    gap: 0;
+  }
+
+  .box-container > div {
+    border-radius: 10px !important; /* bordas arredondadas em todas */
+    height: 180px;
+  }
+
+  /* Mantém a alternância de cores mesmo em 1 coluna */
+  .box-container > div:nth-child(odd) {
+    background-color: #6D2C09;
+    color: #FFA5B4;
+  }
+
+  .box-container > div:nth-child(even) {
+    background-color: #FFA5B4;
+    color: #6D2C09;
+  }
+}
+
+

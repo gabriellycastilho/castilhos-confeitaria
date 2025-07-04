@@ -3,7 +3,6 @@ import coneRecheadoImg from "../assets/images/conerecheadocard.jpg.webp";
 import boloDePoteImg from "../assets/images/bolodepotebutton.jpe";
 import brownieImg from "../assets/images/browniebutton.jpg.webp";
 import geladinhoImg from "../assets/images/geladinhogourmetcard.jpeg";
-
 import lancheNaturalImg from "../assets/images/lanchenatural.jpg.webp";
 import lancheComboImg from "../assets/images/lanchenatural_combo.png";
 import paoRecheadoImg from "../assets/images/paorecheado.jpg";

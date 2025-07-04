@@ -5,32 +5,74 @@ export const CarrinhoContext = createContext();
 export const CarrinhoProvider = ({ children }) => {
   const [carrinho, setCarrinho] = useState([]);
 
-  const adicionarAoCarrinho = (produto) => {
-    setCarrinho((prev) => {
-      // Verifica se o produto com o mesmo id E mesmo sabor já está no carrinho
-      const itemExistente = prev.find(
-        (item) => item.id === produto.id && item.sabor === produto.sabor
-      );
+  const aumentarQuantidade = (id, sabor) => {
+  setCarrinho((prev) =>
+    prev.map((item) =>
+      item.id === id && item.sabor === sabor
+        ? { ...item, quantidade: item.quantidade + 1 }
+        : item
+    )
+  );
+};
 
-      let novoCarrinho;
+const diminuirQuantidade = (id, sabor) => {
+  setCarrinho((prev) =>
+    prev
+      .map((item) =>
+        item.id === id && item.sabor === sabor
+          ? { ...item, quantidade: item.quantidade - 1 }
+          : item
+      )
+      .filter((item) => item.quantidade > 0) // remove se quantidade zero
+  );
+};
 
-      if (itemExistente) {
-        // Se já existe esse sabor, só soma a quantidade
-        novoCarrinho = prev.map((item) =>
-          item.id === produto.id && item.sabor === produto.sabor
-            ? { ...item, quantidade: item.quantidade + produto.quantidade }
-            : item
-        );
-      } else {
-        // Senão, adiciona como item novo
-        novoCarrinho = [...prev, { ...produto }];
-      }
+ const adicionarAoCarrinho = (produto) => {
+  const precoStr = produto.preco?.toString().trim();
+let precoNum = 0;
 
-      console.log("Carrinho agora:", novoCarrinho);
+if (precoStr && precoStr.length > 0) {
+  // Remove "R$", espaços, substitui vírgula por ponto
+  const cleanStr = precoStr
+    .replace("R$", "")
+    .replace(/\s/g, "")
+    .replace(",", ".");
 
-      return novoCarrinho;
-    });
+  precoNum = parseFloat(cleanStr);
+}
+
+if (isNaN(precoNum)) {
+  console.warn("Preço inválido, caindo para 0:", produto.preco);
+  precoNum = 0;
+}
+
+  const quantidadeNum = produto.quantidade
+    ? parseInt(produto.quantidade)
+    : 1;
+
+  const produtoFormatado = {
+    ...produto,
+    preco: isNaN(precoNum) ? 0 : precoNum,
+    quantidade: isNaN(quantidadeNum) ? 1 : quantidadeNum,
   };
+
+  setCarrinho((prev) => {
+    const itemExistente = prev.find(
+      (item) =>
+        item.id === produtoFormatado.id && item.sabor === produtoFormatado.sabor
+    );
+
+    if (itemExistente) {
+      return prev.map((item) =>
+        item.id === produtoFormatado.id && item.sabor === produtoFormatado.sabor
+          ? { ...item, quantidade: item.quantidade + produtoFormatado.quantidade }
+          : item
+      );
+    } else {
+      return [...prev, produtoFormatado];
+    }
+  });
+};
 
   const removerDoCarrinho = (id, sabor) => {
     setCarrinho((prev) =>
@@ -51,10 +93,14 @@ export const CarrinhoProvider = ({ children }) => {
         adicionarAoCarrinho,
         removerDoCarrinho,
         limparCarrinho,
+        aumentarQuantidade,
+        diminuirQuantidade,
       }}
     >
       {children}
     </CarrinhoContext.Provider>
   );
 };
+
+
 

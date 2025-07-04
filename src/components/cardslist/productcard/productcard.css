@@ -84,14 +84,16 @@
     max-width: none;
     margin: 0;
     scroll-snap-align: start;
-
-    height: 400px; /* fixar altura no mobile tb */
+    height: 400px; /* todos iguais */
+    flex-shrink: 0;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
   }
 
   .product-card-sabores {
     margin: 0.5rem 0 1rem;
+    overflow-y: auto;
   }
 
   .product-card-botao {
@@ -100,5 +102,12 @@
     border-radius: 30px;
   }
 }
+
+@media (max-width: 600px) {
+  .swiper-slide {
+    height: 80vh !important; /* força a altura igual ao card */
+  }
+}
+
 
 
