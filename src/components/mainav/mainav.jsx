@@ -1,10 +1,6 @@
 import { useState } from "react";
 import "./mainav.css";
 import logo from "../../assets/images/logo.png";
-import { ReactComponent as ProdutosIcon } from "../../assets/icons/produtos.svg";
-import { ReactComponent as PromocoesIcon } from "../../assets/icons/promocoes.svg";
-import { ReactComponent as CestasIcon } from "../../assets/icons/cestas.svg";
-import { ReactComponent as PedidoIcon } from "../../assets/icons/pedido.svg";
 import { NavLink } from "react-router-dom";
 
 const Mainav = () => {
@@ -39,7 +35,6 @@ const Mainav = () => {
       <ul className={`menu-lista ${menuAberto ? "aberto" : ""}`}>
         <li className="dropdown">
           <div className="dropdown-title" onClick={toggleDropdown}>
-            <ProdutosIcon width={50} height={50} />
             Produtos e Sabores
           </div>
           <ul className={`dropdown-menu ${dropdownAberto ? "aberto" : ""}`}>
@@ -58,21 +53,18 @@ const Mainav = () => {
           </ul>
         </li>
         <li>
-          <NavLink to="/pedido" onClick={fecharMenu}>
-            <PedidoIcon />
-            Faça seu Pedido
-          </NavLink>
-        </li>
-        <li>
           <NavLink to="/cestas" onClick={fecharMenu}>
-            <CestasIcon />
             Cestas de Presente
           </NavLink>
         </li>
         <li>
           <NavLink to="/promocoes" onClick={fecharMenu}>
-            <PromocoesIcon />
             Combos e Promoções
+          </NavLink>
+        </li>
+         <li>
+          <NavLink to="/entregaseretiradas" onClick={fecharMenu}>
+            Entregas/Retiradas
           </NavLink>
         </li>
       </ul>

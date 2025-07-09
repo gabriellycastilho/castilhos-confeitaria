@@ -20,21 +20,18 @@
   max-width: 700px;
 }
 
+.hero-box img {
+  width: 16rem;
+  max-width: 100%;
+  height: auto;
+}
+
 /* Texto boas vindas */
 .boasvindas {
   font-size: 1.5rem;
   color: white;
   font-weight: 300;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
-  margin-bottom: 1rem;
-}
-
-.boasvindas span {
-  font-family: "Handelson Three", cursive;
-  font-size: 3rem;
-  color: white;
-  display: block;
-  margin-top: 0.3rem;
 }
 
 /* Slogan */
@@ -45,7 +42,6 @@
   letter-spacing: 0.03em;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
 }
-
 /* ===== Responsividade ===== */
 
 @media (max-width: 768px) {
@@ -64,8 +60,8 @@
     font-size: 1.2rem;
   }
 
-  .boasvindas span {
-    font-size: 2.2rem;
+  .hero-box img {
+    width: 10rem;
   }
 
   .slogan {
@@ -88,8 +84,8 @@
     font-size: 1rem;
   }
 
-  .boasvindas span {
-    font-size: 1.8rem;
+  .hero-box img {
+    width: 9rem;
   }
 
   .slogan {

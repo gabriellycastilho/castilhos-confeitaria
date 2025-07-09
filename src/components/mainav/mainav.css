@@ -8,7 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 14vh;
+  height: 10vh;
   width: 100%;
   background-color: #fff5f2;
   padding: 6vh 0;
@@ -17,6 +17,7 @@
 
 .mainav-container ul {
   display: flex;
+  align-items: center;
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -25,7 +26,7 @@
 .mainav-container li {
   position: relative;
   margin-right: 1vw;
-  margin-left: 5vw;
+  margin-left: 6vw;
 }
 
 .mainav-container li a {
@@ -34,7 +35,7 @@
   align-items: center;
   text-decoration: none;
   color: black;
-  font-size: 0.9rem;
+  font-size: 1rem;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -43,35 +44,30 @@
   transform: scale(1.05);
 }
 
-.pedido-icon,
-.sabores-icon,
-.cestas-icon,
-.promocoes-icon {
-  fill: currentColor;
-  margin-bottom: 1.5vh;
-  width: 2rem;
-  height: 2rem;
-}
 
 /* Dropdown desktop */
 .dropdown {
   position: relative;
-  margin-bottom: 1.5vh;
-  height: 2rem;
+  margin: 0; 
+  height: auto; 
   font-size: 0.9rem;
   cursor: pointer;
+  display: flex;
+  align-items: center; 
 }
 
 .dropdown-title {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  align-items: center; 
+  font-size: 1rem;
+  flex-direction: row; 
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
+
 .dropdown-menu {
   position: absolute;
-  top: 205%;
+  top: 100%;
   left: 0;
   min-width: 6rem;
   max-width: 9rem;
@@ -158,15 +154,16 @@
 
 @media (max-width: 768px) {
   .mainav-container {
-    height: 4rem; /* altura compacta */
-    padding: 1.5 1rem; /* quase sem padding vertical */
-    flex-wrap: nowrap; /* não quebrar linha */
+    height: 5rem; 
+    padding: 0 1rem; 
+    justify-content: space-between; 
   }
 
   /* Logo menor */
   .logo img {
     width: 7rem;
     margin-left: 0;
+    margin-top: 0.5rem;
   }
 
   /* Esconder menu desktop */

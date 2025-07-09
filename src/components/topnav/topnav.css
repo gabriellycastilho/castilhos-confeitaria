@@ -59,8 +59,9 @@
     font-size: 0.75rem;
   }
 
-  .topnav-container li {
-    margin-right: 2vw;
+ .topnav-container ul {
+    display: flex;
+    gap: 4.5rem;
   }
 
   .social-icons {
@@ -77,8 +78,9 @@
     font-size: 0.75rem;
   }
 
-  .topnav-container li {
-    margin-right: 2vw;
+   .topnav-container ul {
+    display: flex;
+    gap: 4.5rem;
   }
 
   .social-icons {

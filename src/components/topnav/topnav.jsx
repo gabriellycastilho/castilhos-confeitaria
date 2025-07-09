@@ -11,10 +11,10 @@ const Topnav = () => {
           <a href="#sobre">Sobre Nós</a>
         </li>
         <li>
-          <a href="#promoções">Entregas</a>
+          <a href="#galeria">Galeria</a>
         </li>
         <li>
-          <a href="#sugestões">Sugestões</a>
+          <a href="#depoimentos">Depoimentos</a>
         </li>
       </ul>
 

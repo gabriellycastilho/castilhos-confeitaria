@@ -30,23 +30,21 @@
 
 /* Celulares */
 @media (max-width: 600px) {
-  #produtos {
-    padding: 3vw 3vw;
-  }
   .cards-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* um card por linha */
     gap: 1rem;
     padding: 1rem;
   }
-  #produtos h2 {
-    font-size: 1.3rem;
-    width: 100%;
-  }
-  #produtos h3 {
-    font-size: 1.1rem;
-    padding: 0 1rem;
+
+  /* diminui a largura dos cards */
+  .cards-container > * {
+    max-width: 80vw; /* ajusta esse valor pra o que quiser */
+    margin-left: auto;
+    margin-right: auto; /* centraliza */
+    width: 100%; /* para pegar o máximo possível até o max-width */
   }
 }
+
 
 
 
