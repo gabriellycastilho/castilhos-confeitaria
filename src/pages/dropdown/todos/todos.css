@@ -31,7 +31,7 @@
 
 .todos-header {
   position: relative;
-  background-image: url("../../../assets/images/todosbackground.webp");
+  background-image: url("../../../assets/images/todosbackground.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

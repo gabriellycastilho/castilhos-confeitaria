@@ -1,7 +1,9 @@
 import "./doces.css";
-import { produtosDoces } from "../../../data/produtosDoces";
 import CardsList from "../../../components/cardslist/cardslist";
 import "../../../components/cardslist/productcard/productcard.css"; // CSS compartilhado entre Doces, Salgados, Bolos e Todos
+import "../../../components/cardslist/cardslist.css";
+
+
 
 const Doces = () => {
   return (

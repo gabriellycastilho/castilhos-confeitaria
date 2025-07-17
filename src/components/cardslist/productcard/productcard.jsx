@@ -1,7 +1,9 @@
 import "./productcard.css";
 import { motion } from "framer-motion";
 
-const ProductCard = ({ produto, onAdicionar }) => {
+export default function ProductCard({ produto, onAdicionar }) {
+  const imagemPath = `${process.env.PUBLIC_URL}/assets/images/${produto.imagem}`;
+
   return (
     <motion.div
       className="product-card-motion"
@@ -11,35 +13,66 @@ const ProductCard = ({ produto, onAdicionar }) => {
       viewport={{ once: true }}
     >
       <div className="product-card">
+        {/* Nome */}
         <h3 className="product-card-nome">{produto.nome}</h3>
+
+        {/* Imagem */}
         <img
-          src={produto.imagem}
+          src={imagemPath}
           alt={produto.nome}
           className="product-card-img"
         />
 
-        <ul className="product-card-sabores">
-          {Array.isArray(produto.sabores) &&
-            produto.sabores.map((sabor, index) => (
-              <li key={index}>{sabor}</li>
+        {/* Detalhes diferentes por categoria */}
+        {produto.detalhes?.sabores && (
+          <ul className="product-card-sabores">
+            {produto.detalhes.sabores.map((sabor, idx) => (
+              <li key={idx}>{sabor}</li>
             ))}
-        </ul>
+          </ul>
+        )}
 
-        <div className="product-card-footer">
-          <p className="product-card-preco">{produto.preco}</p>
-          <button
-            className="product-card-botao"
-            onClick={() => onAdicionar(produto)}
-          >
-            Adicionar ao pedido
-          </button>
-        </div>
+        {produto.categoria === "cestas" && produto.detalhes?.itens && (
+          <ul className="product-card-itens">
+            {produto.detalhes.itens.map((item, idx) => (
+              <li key={idx}>{item}</li>
+            ))}
+          </ul>
+        )}
+
+       {/* Preço */}
+<div className="product-card-footer">
+  <p className="product-card-preco">
+    {produto.preco !== undefined && produto.preco !== null
+      ? `R$ ${Number(produto.preco).toFixed(2)}`
+      : "Sob consulta"}
+  </p>
+
+  {onAdicionar && (
+    <button
+      className="product-card-botao"
+      onClick={() =>
+        onAdicionar({
+          id: produto.id,
+          nome: produto.nome,
+          imagem: imagemPath,
+          preco: Number(produto.preco) || 0,
+          categoria: produto.categoria,
+          quantidade: 1,
+        })
+      }
+    >
+      Adicionar ao pedido
+    </button>
+  )}
+</div>
+
       </div>
     </motion.div>
   );
-};
+}
 
-export default ProductCard;
+
 
 
 

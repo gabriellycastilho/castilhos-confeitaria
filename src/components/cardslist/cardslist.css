@@ -34,7 +34,8 @@
 /* Container dos cards - com altura mínima para igualar cards */
 .container-cards-list {
   min-height: 480px; /* ajuste conforme seu maior card */
-  padding: 2rem 0;
+  padding: 2rem 1rem;
+  margin: 5rem 2rem;
   display: flex;
   gap: 1rem;
 }
@@ -43,7 +44,7 @@
 .swiper-slide {
   display: flex;
   flex-direction: column;
-  height: 100%; /* crucial para altura uniforme */
+  height: 100%; 
 }
 
 /* Ajuste do card para ocupar toda altura do slide */
@@ -54,13 +55,25 @@
   height: 100%;
 }
 
-/* Mobile (opcional ajustes) */
+.cardslist-wrapper {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* Mobile */
 @media (max-width: 600px) {
   .container-cards-list {
-    min-height: 450px; /* menor altura para mobile */
+    min-height: 450px; 
     padding: 1rem 0;
   }
+
+   .cardslist-wrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
+
+
 
 
 

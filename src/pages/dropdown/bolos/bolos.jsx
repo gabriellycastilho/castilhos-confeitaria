@@ -1,7 +1,10 @@
 import "./bolos.css";
 import { motion } from "framer-motion";
-import "../../../components/cardslist/productcard/productcard.css"; // CSS compartilhado entre Doces, Salgados, Bolos e Todos
+import { useState, useContext } from "react";
+import { CarrinhoContext } from "../../../context/CarrinhoContext"; 
+import ModalPedido from "../../../components/modal/modalPedido"; 
 import produtosBolos from "../../../data/produtosBolos";
+
 import bolo1 from "../../../assets/images/bolo1.jpeg";
 import bolo2 from "../../../assets/images/bolo2.jpeg";
 import bolo3 from "../../../assets/images/bolo3.jpeg";
@@ -23,10 +26,14 @@ const imagensMap = {
 };
 
 const Bolos = () => {
+  const [showModal, setShowModal] = useState(false); 
+  const { adicionarAoCarrinho } = useContext(CarrinhoContext); 
+
   return (
     <div className="bolos-container">
+      {/* HEADER */}
       <div className="bolos-header">
-       <motion.h1
+        <motion.h1
           className="bolos-title"
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -39,8 +46,10 @@ const Bolos = () => {
         </div>
       </div>
 
+      {/* CONTEÚDO */}
       <div className="bolos-content">
         <section className="bolos-grid">
+          {/* LADO ESQUERDO */}
           <div className="bolos-info">
             <div className="bolos-card">
               <h2>🎂 Valores</h2>
@@ -92,9 +101,33 @@ const Bolos = () => {
               ))}
             </div>
 
-            <button className="bolos-botao">Adicionar ao pedido</button>
+            {/* BOTÃO ABRE O MODAL */}
+            <button onClick={() => setShowModal(true)} className="bolos-botao">
+              Adicionar ao pedido
+            </button>
+
+            {/* MODAL QUE PERMITE ESCOLHER RECHEIO, MASSA E QUANTIDADE */}
+            {showModal && (
+              <ModalPedido
+                produto={{
+                  nome: "Bolo Confeitado",
+                  tipo: "bolo",
+                  preco: "R$ 100,00",
+                  opcoes: {
+                    recheios: produtosBolos.recheios,
+                    massas: produtosBolos.massas,
+                  },
+                }}
+                onCancel={() => setShowModal(false)}
+                onConfirm={(pedido) => {
+                  adicionarAoCarrinho(pedido);
+                  setShowModal(false);
+                }}
+              />
+            )}
           </div>
 
+          {/* GALERIA */}
           <div className="bolos-gallery">
             {produtosBolos.imagens.map((imgName, i) => {
               const ImgImport = imagensMap[imgName.replace(".jpeg", "")];

@@ -47,15 +47,16 @@ const Mainav = () => {
             <li>
               <NavLink to="/bolos" onClick={fecharMenu}>Bolos Confeitados</NavLink>
             </li>
-            <li>
-              <NavLink to="/todos" onClick={fecharMenu}>VER TODOS</NavLink>
-            </li>
-          </ul>
-        </li>
-        <li>
+             <li>
           <NavLink to="/cestas" onClick={fecharMenu}>
             Cestas de Presente
           </NavLink>
+        </li>
+            <li>
+              <NavLink to="/todos" onClick={fecharMenu}>VER TODOS</NavLink>
+            </li>
+            
+          </ul>
         </li>
         <li>
           <NavLink to="/promocoes" onClick={fecharMenu}>
@@ -65,6 +66,11 @@ const Mainav = () => {
          <li>
           <NavLink to="/entregaseretiradas" onClick={fecharMenu}>
             Entregas/Retiradas
+          </NavLink>
+        </li>
+         <li>
+          <NavLink to="/faleconosco" onClick={fecharMenu}>
+            Fale Conosco
           </NavLink>
         </li>
       </ul>

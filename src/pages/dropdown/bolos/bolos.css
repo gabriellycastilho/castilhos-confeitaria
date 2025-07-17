@@ -14,18 +14,18 @@
 }
 
 .bolos-header {
-  background-image: url("../../../assets/images/bolosconfeitadosbackground.jpg");
+  background-image: url("../../../assets/images/bolosbackground.png");
   position: relative;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 300px; /* ou o tamanho que quiser */
+  height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: white; /* deixa o texto visível por cima do overlay */
+  color: white;
   overflow: hidden;
 }
 
@@ -36,7 +36,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* overlay preto com 40% opacidade */
+  background: rgba(0, 0, 0, 0.4);
   z-index: 1;
 }
 
@@ -64,11 +64,10 @@
   text-transform: uppercase;
   letter-spacing: 0.05rem;
   align-items: center;
-  cursor: default; /* indica que não é clicável */
-  pointer-events: none; /* garante que nunca será clicável */
+  cursor: default;
+  pointer-events: none;
   z-index: 2;
 }
-
 
 .bolos-grid {
   display: grid;
@@ -246,15 +245,108 @@
 }
 
 @media (max-width: 768px) {
+  .bolos-title {
+    font-size: 3.5rem;
+  }
+
   .bolos-grid {
     grid-template-columns: 1fr;
   }
 
   .recheios-box {
+    display: flex;
     flex-direction: column;
+    gap: 1rem;
   }
 
-  .bolos-title {
-    font-size: 2.5rem;
+  .bolos-subtitle {
+    font-size: 0.8rem;
+    padding: 0.4rem 1rem;
+  }
+
+  .bolos-content {
+    padding: 2rem;
+  }
+
+  .bolos-info {
+    padding: 1rem;
+  }
+
+  .bolos-gallery img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
   }
 }
+
+@media (max-width: 480px) {
+  .bolos-title {
+    font-size: 3.5rem;
+  }
+
+  .bolos-header {
+    height: 200px;
+  }
+
+  .bolos-subtitle {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.8rem;
+  }
+
+  .bolos-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .bolos-info {
+    gap: 1.5rem;
+  }
+
+  .bolos-card h2 {
+    font-size: 1.2rem;
+  }
+
+  .bolos-card p,
+  .bolos-card ul li {
+    font-size: 0.9rem;
+  }
+
+  .bolos-botao {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  .bolos-gallery {
+    gap: 0.5rem;
+  }
+
+  .bolos-gallery img {
+    height: auto;
+    max-height: 200px;
+    border-radius: 0.8rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .bolos-title {
+    font-size: 3.5rem;
+  }
+
+  .bolos-subtitle {
+    font-size: 0.65rem;
+  }
+
+  .bolos-card h2 {
+    font-size: 1.1rem;
+  }
+
+  .bolos-card h3 {
+    font-size: 1rem;
+  }
+
+  .bolos-botao {
+    font-size: 0.9rem;
+    padding: 0.7rem 1rem;
+  }
+}
+

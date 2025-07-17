@@ -2,10 +2,9 @@ import "./cardslist.css";
 import { motion } from "framer-motion";
 import { useState, useContext } from "react";
 import { CarrinhoContext } from "../../context/CarrinhoContext";
-import ModalSaboresQuantidade from "../modal/modalSaboresQuantidade";
+import ModalPedido from "../modal/modalPedido";
 import ProductCard from "./productcard/productcard";
 import { toast } from "react-toastify";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
@@ -37,31 +36,32 @@ const CardsList = ({ produtos, titulo, subtitulo, containerClass }) => {
         </motion.h1>
         <div className={`${containerClass}-subtitle`}>{subtitulo}</div>
       </div>
-
-      <Swiper
-        modules={[Navigation]}
-        spaceBetween={16}
-        slidesPerView={1}
-        navigation
-        loop={true}
-        breakpoints={{
-          600: { slidesPerView: 2 },
-          1024: { slidesPerView: 4 },
-        }}
-        className="container-cards-list"
-      >
-        {produtos.map((produto) => (
-          <SwiperSlide key={produto.id}>
-            <ProductCard produto={produto} onAdicionar={() => abrirModal(produto)} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <div className="cardslist-wrapper">
+        <Swiper
+          modules={[Navigation]}
+          spaceBetween={16}
+          slidesPerView={1}
+          navigation
+          loop={true}
+          breakpoints={{
+            600: { slidesPerView: 2 },
+            1024: { slidesPerView: 4 },
+          }}
+          className="container-cards-list"
+        >
+          {produtos.map((produto) => (
+            <SwiperSlide key={produto.id}>
+              <ProductCard produto={produto} onAdicionar={() => abrirModal(produto)} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
 
       {produtoSelecionado && (
-        <ModalSaboresQuantidade
-          produto={produtoSelecionado}
-          onConfirm={confirmarAdicionar}
-          onCancel={fecharModal}
+        <ModalPedido
+    produto={{ ...produtoSelecionado, tipo: "doce" }} 
+    onConfirm={confirmarAdicionar}
+    onCancel={fecharModal}
         />
       )}
     </div>
@@ -69,6 +69,8 @@ const CardsList = ({ produtos, titulo, subtitulo, containerClass }) => {
 };
 
 export default CardsList;
+
+
 
 
 

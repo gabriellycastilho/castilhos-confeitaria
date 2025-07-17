@@ -16,10 +16,10 @@ footer ul {
 }
 
 .logo-footer img {
-  width: 10rem; /* Limitar a largura da logo */
+  width: 15rem; /* Limitar a largura da logo */
   max-width: 100%; /* Garantir que a logo nunca ultrapasse o limite */
+  margin-bottom: -5rem;
   height: auto;
-  margin-left: 2rem;
 }
 
 .logo-footer h5 {
@@ -105,7 +105,7 @@ p {
   color: #5d4037;
 }
 
-/* === Responsividade === */
+/* Responsividade */
 @media (max-width: 1024px) {
   .footer-container {
     gap: 5rem;
@@ -115,7 +115,7 @@ p {
 
 @media (max-width: 768px) {
   footer {
-    height: auto; /* deixa crescer conforme conteúdo */
+    height: auto; 
     padding-bottom: 2rem;
   }
 
@@ -125,9 +125,16 @@ p {
     padding: 2rem;
   }
 
+  .logo-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+  }
+
   .logo-footer img {
     margin-left: 0;
-    margin-bottom: 1rem;
+    margin-bottom: -3rem;
     width: 8rem;
   }
 
@@ -149,7 +156,7 @@ p {
   }
 
   .logo-footer img {
-    width: 7rem;
+    width: 12rem;
   }
 
   .links-pedido h3,
@@ -168,5 +175,16 @@ p {
   .footer-container > div {
     padding: 0 1rem;
   }
+
+  .direitos {
+    height: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
 }
+
 

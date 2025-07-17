@@ -69,6 +69,7 @@
   position: absolute;
   top: 100%;
   left: 0;
+  text-align: center;
   min-width: 6rem;
   max-width: 9rem;
   background-color: #fff5f2;
@@ -139,6 +140,16 @@
   transition: all 0.3s ease;
 }
 
+.fechar-dropdown-mobile {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #d00;
+  text-align: right;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+}
+
+
 /* Animação X do hamburguer */
 .hamburguer.ativo span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
@@ -202,12 +213,14 @@
     padding: 0.8rem 1.5rem;
   }
 
-  .mainav-container li a {
-    font-size: 1.2rem;
-    color: #222;
-    flex-direction: row;
-    align-items: center;
-  }
+.mainav-container li a {
+  font-size: 1.2rem;
+  color: #222;
+  display: block;
+  text-align: center;
+  padding: 0.5rem 1.5rem;
+}
+
 
   .mainav-container li a:hover {
     color: #ffa5b4;

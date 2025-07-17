@@ -11,9 +11,6 @@ const Topnav = () => {
           <a href="#sobre">Sobre Nós</a>
         </li>
         <li>
-          <a href="#galeria">Galeria</a>
-        </li>
-        <li>
           <a href="#depoimentos">Depoimentos</a>
         </li>
       </ul>
